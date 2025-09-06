@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Phone Number</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8 mx-4">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Save Contact</h1>
+            <p class="text-gray-500 mb-6">Enter a phone number to save it and redirect to WhatsApp.</p>
+        </div>
+        
+        <!-- Form to submit the phone number -->
+        <form action="/save-number" method="POST">
+            <div class="mb-4">
+                <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phoneNumber" 
+                    name="phoneNumber" 
+                    placeholder="e.g., 919876543210" 
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                >
+                <p class="text-xs text-gray-500 mt-1">Please include the country code (e.g., 91 for India).</p>
+            </div>
+            
+            <button 
+                type="submit" 
+                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
+            >
+                Save Number
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
