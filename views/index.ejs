@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Phone Number</title>
+    <title>Add a Number</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
 
-    <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8 mx-4">
-        <div class="text-center">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">Save Contact</h1>
-            <p class="text-gray-500 mb-6">Enter a phone number to save it and redirect to WhatsApp.</p>
+    <div class="max-w-xl w-full bg-white rounded-lg shadow-lg p-8 mx-4">
+        <div class="text-left mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Save a New Number</h1>
+            <p class="text-gray-500 mt-1">This number will be added to the rotation.</p>
         </div>
         
-        <!-- Form to submit the phone number -->
-        <form action="/save-number" method="POST">
-            <div class="mb-4">
-                <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                <input 
-                    type="tel" 
-                    id="phoneNumber" 
-                    name="phoneNumber" 
-                    placeholder="e.g., 919876543210" 
-                    required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
-                >
-                <p class="text-xs text-gray-500 mt-1">Please include the country code (e.g., 91 for India).</p>
+        <form action="/add-number" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                 <div>
+                    <label for="countryCode" class="block text-sm font-medium text-gray-700">Country Code</label>
+                    <input type="text" name="countryCode" placeholder="e.g., 91" required class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="text" name="phoneNumber" placeholder="e.g., 9876543210" required class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+             <div class="mb-6">
+                <label for="customMessage" class="block text-sm font-medium text-gray-700">Custom Message (Optional)</label>
+                <input type="text" name="customMessage" placeholder="Hello! I have a question." class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
             
-            <button 
-                type="submit" 
-                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
-            >
-                Save Number
-            </button>
+            <div class="flex items-center justify-between">
+                 <a href="/dashboard" class="text-indigo-600 hover:underline">Go to Dashboard</a>
+                <button type="submit" class="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                    Save Number
+                </button>
+            </div>
         </form>
     </div>
 
 </body>
 </html>
+
