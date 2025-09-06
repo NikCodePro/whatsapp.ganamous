@@ -15,7 +15,7 @@ app.use(express.static('public')); // To serve static files (if any)
 // 4. Connect to MongoDB
 // Make sure you have MongoDB running on your local machine
 // Replace 'whatsapp-redirect-db' with your desired database name
-mongoose.connect('mongodb://127.0.0.1:27017/whatsapp-ganmous-db', {
+mongoose.connect('mongodb+srv://techneural:XB1ajIgz32TAK8Uw@techneural.rcfn1ld.mongodb.net/ganamous', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
